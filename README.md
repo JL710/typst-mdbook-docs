@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 ### Get the Source Data
 
-To obtain the source data used for generating the documentation, you need to clone the Typst repository and run:
+To obtain the source data used for generating the documentation, you need to clone the Typst repository and run the following command inside it:
 
 ```bash
 cargo run --package typst-docs --assets-dir <asset-output-dir> --out-file <output-json-file>
