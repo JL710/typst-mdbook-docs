@@ -2,6 +2,8 @@
 
 This tool generates Typst documentation in Markdown and builds an MdBook from it.
 
+![Preview](./preview.png)
+
 ## Generate the Docs
 
 To generate the documentation, you must have the Rust toolchain, including Cargo, installed.
