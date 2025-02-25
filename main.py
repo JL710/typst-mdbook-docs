@@ -17,7 +17,7 @@ def create_empty_mdbook(path: Path):
 language = "en"
 multilingual = false
 src = "src"
-title = "Typst Docs"
+title = "Typst MdBook Docs"
 
 [build]
 create-missing = false
