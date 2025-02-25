@@ -141,13 +141,13 @@ def render_body(body_type: str, body_content) -> str:
         return f"{body_type} is currently not supported"
 
 
-def make_md_book_entry(out_dir: Path, data: dict) -> Page:
+def make_md_book_page(out_dir: Path, data: dict) -> Page:
     title = data["title"]
     route = data["route"][1:]
     description = data["description"]
     body_content = data["body"]["content"]
     body_kind = data["body"]["kind"]
-    print(f"make entry for {route}")
+    print(f"generate page for {route}")
 
     page = Page(route, title, list())
 
@@ -160,7 +160,7 @@ def make_md_book_entry(out_dir: Path, data: dict) -> Page:
     executor = ProcessPoolExecutor(max_workers=3)
     futures = []
     for child in data["children"]:
-        futures.append(executor.submit(make_md_book_entry, out_dir, child))
+        futures.append(executor.submit(make_md_book_page, out_dir, child))
     for future in futures:
         page.children.append(future.result())
 
@@ -180,7 +180,7 @@ def generate_markdown_files(data: dict, out_dir: Path):
     pages = []
 
     for entry in data:
-        pages.append(make_md_book_entry(out_dir, entry))
+        pages.append(make_md_book_page(out_dir, entry))
 
     with open(out_dir / "SUMMARY.md", "w") as f:
         for page in pages:
