@@ -20,7 +20,7 @@ pip install -r requirements.txt
 To obtain the source data used for generating the documentation, you need to clone the Typst repository and run the following command inside it:
 
 ```bash
-cargo run --package typst-docs --assets-dir <asset-output-dir> --out-file <output-json-file>
+cargo run --package typst-docs -- --assets-dir <asset-output-dir> --out-file <output-json-file>
 ```
 
 > Make sure to specify a valid asset directory and output file.
