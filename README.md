@@ -1,3 +1,7 @@
+# Official offline docs available!!!
+
+Since typst 0.15 and [PR 8138](https://github.com/typst/typst/pull/8138) there are official offline docs based on typst. 
+
 # Typst MdBook Docs
 
 This tool generates Typst documentation in Markdown and builds an MdBook from it.
